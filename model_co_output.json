@@ -1,0 +1,748 @@
+{
+  "params": {
+    "working_days": 24,
+    "sale_price": 30,
+    "card_cost": 2,
+    "commission_A": 20,
+    "op_net_A": 8,
+    "commission_B": 14,
+    "op_net_B": 14,
+    "usd_cop": 4000,
+    "ramp": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      12,
+      15,
+      20,
+      25,
+      30,
+      40,
+      50
+    ]
+  },
+  "salesperson": [
+    {
+      "spd": 1,
+      "per_day_A": 20,
+      "per_mo_A": 480,
+      "per_day_B": 14,
+      "per_mo_B": 336
+    },
+    {
+      "spd": 3,
+      "per_day_A": 60,
+      "per_mo_A": 1440,
+      "per_day_B": 42,
+      "per_mo_B": 1008
+    },
+    {
+      "spd": 5,
+      "per_day_A": 100,
+      "per_mo_A": 2400,
+      "per_day_B": 70,
+      "per_mo_B": 1680
+    },
+    {
+      "spd": 10,
+      "per_day_A": 200,
+      "per_mo_A": 4800,
+      "per_day_B": 140,
+      "per_mo_B": 3360
+    }
+  ],
+  "operator_A": {
+    "1": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 24,
+        "profit": 192,
+        "cum": 192
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 48,
+        "profit": 384,
+        "cum": 576
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 72,
+        "profit": 576,
+        "cum": 1152
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 120,
+        "profit": 960,
+        "cum": 2112
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 192,
+        "profit": 1536,
+        "cum": 3648
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 288,
+        "profit": 2304,
+        "cum": 5952
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 360,
+        "profit": 2880,
+        "cum": 8832
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 480,
+        "profit": 3840,
+        "cum": 12672
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 600,
+        "profit": 4800,
+        "cum": 17472
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 720,
+        "profit": 5760,
+        "cum": 23232
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 960,
+        "profit": 7680,
+        "cum": 30912
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 1200,
+        "profit": 9600,
+        "cum": 40512
+      }
+    ],
+    "3": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 72,
+        "profit": 576,
+        "cum": 576
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 144,
+        "profit": 1152,
+        "cum": 1728
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 216,
+        "profit": 1728,
+        "cum": 3456
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 360,
+        "profit": 2880,
+        "cum": 6336
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 576,
+        "profit": 4608,
+        "cum": 10944
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 864,
+        "profit": 6912,
+        "cum": 17856
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 1080,
+        "profit": 8640,
+        "cum": 26496
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 1440,
+        "profit": 11520,
+        "cum": 38016
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 1800,
+        "profit": 14400,
+        "cum": 52416
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 2160,
+        "profit": 17280,
+        "cum": 69696
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 2880,
+        "profit": 23040,
+        "cum": 92736
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 3600,
+        "profit": 28800,
+        "cum": 121536
+      }
+    ],
+    "5": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 120,
+        "profit": 960,
+        "cum": 960
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 240,
+        "profit": 1920,
+        "cum": 2880
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 360,
+        "profit": 2880,
+        "cum": 5760
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 600,
+        "profit": 4800,
+        "cum": 10560
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 960,
+        "profit": 7680,
+        "cum": 18240
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 1440,
+        "profit": 11520,
+        "cum": 29760
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 1800,
+        "profit": 14400,
+        "cum": 44160
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 2400,
+        "profit": 19200,
+        "cum": 63360
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 3000,
+        "profit": 24000,
+        "cum": 87360
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 3600,
+        "profit": 28800,
+        "cum": 116160
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 4800,
+        "profit": 38400,
+        "cum": 154560
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 6000,
+        "profit": 48000,
+        "cum": 202560
+      }
+    ],
+    "10": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 240,
+        "profit": 1920,
+        "cum": 1920
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 480,
+        "profit": 3840,
+        "cum": 5760
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 720,
+        "profit": 5760,
+        "cum": 11520
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 1200,
+        "profit": 9600,
+        "cum": 21120
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 1920,
+        "profit": 15360,
+        "cum": 36480
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 2880,
+        "profit": 23040,
+        "cum": 59520
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 3600,
+        "profit": 28800,
+        "cum": 88320
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 4800,
+        "profit": 38400,
+        "cum": 126720
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 6000,
+        "profit": 48000,
+        "cum": 174720
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 7200,
+        "profit": 57600,
+        "cum": 232320
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 9600,
+        "profit": 76800,
+        "cum": 309120
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 12000,
+        "profit": 96000,
+        "cum": 405120
+      }
+    ]
+  },
+  "operator_B": {
+    "1": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 24,
+        "profit": 336,
+        "cum": 336
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 48,
+        "profit": 672,
+        "cum": 1008
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 72,
+        "profit": 1008,
+        "cum": 2016
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 120,
+        "profit": 1680,
+        "cum": 3696
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 192,
+        "profit": 2688,
+        "cum": 6384
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 288,
+        "profit": 4032,
+        "cum": 10416
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 360,
+        "profit": 5040,
+        "cum": 15456
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 480,
+        "profit": 6720,
+        "cum": 22176
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 600,
+        "profit": 8400,
+        "cum": 30576
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 720,
+        "profit": 10080,
+        "cum": 40656
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 960,
+        "profit": 13440,
+        "cum": 54096
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 1200,
+        "profit": 16800,
+        "cum": 70896
+      }
+    ],
+    "3": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 72,
+        "profit": 1008,
+        "cum": 1008
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 144,
+        "profit": 2016,
+        "cum": 3024
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 216,
+        "profit": 3024,
+        "cum": 6048
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 360,
+        "profit": 5040,
+        "cum": 11088
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 576,
+        "profit": 8064,
+        "cum": 19152
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 864,
+        "profit": 12096,
+        "cum": 31248
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 1080,
+        "profit": 15120,
+        "cum": 46368
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 1440,
+        "profit": 20160,
+        "cum": 66528
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 1800,
+        "profit": 25200,
+        "cum": 91728
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 2160,
+        "profit": 30240,
+        "cum": 121968
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 2880,
+        "profit": 40320,
+        "cum": 162288
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 3600,
+        "profit": 50400,
+        "cum": 212688
+      }
+    ],
+    "5": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 120,
+        "profit": 1680,
+        "cum": 1680
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 240,
+        "profit": 3360,
+        "cum": 5040
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 360,
+        "profit": 5040,
+        "cum": 10080
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 600,
+        "profit": 8400,
+        "cum": 18480
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 960,
+        "profit": 13440,
+        "cum": 31920
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 1440,
+        "profit": 20160,
+        "cum": 52080
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 1800,
+        "profit": 25200,
+        "cum": 77280
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 2400,
+        "profit": 33600,
+        "cum": 110880
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 3000,
+        "profit": 42000,
+        "cum": 152880
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 3600,
+        "profit": 50400,
+        "cum": 203280
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 4800,
+        "profit": 67200,
+        "cum": 270480
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 6000,
+        "profit": 84000,
+        "cum": 354480
+      }
+    ],
+    "10": [
+      {
+        "month": 1,
+        "reps": 1,
+        "cards": 240,
+        "profit": 3360,
+        "cum": 3360
+      },
+      {
+        "month": 2,
+        "reps": 2,
+        "cards": 480,
+        "profit": 6720,
+        "cum": 10080
+      },
+      {
+        "month": 3,
+        "reps": 3,
+        "cards": 720,
+        "profit": 10080,
+        "cum": 20160
+      },
+      {
+        "month": 4,
+        "reps": 5,
+        "cards": 1200,
+        "profit": 16800,
+        "cum": 36960
+      },
+      {
+        "month": 5,
+        "reps": 8,
+        "cards": 1920,
+        "profit": 26880,
+        "cum": 63840
+      },
+      {
+        "month": 6,
+        "reps": 12,
+        "cards": 2880,
+        "profit": 40320,
+        "cum": 104160
+      },
+      {
+        "month": 7,
+        "reps": 15,
+        "cards": 3600,
+        "profit": 50400,
+        "cum": 154560
+      },
+      {
+        "month": 8,
+        "reps": 20,
+        "cards": 4800,
+        "profit": 67200,
+        "cum": 221760
+      },
+      {
+        "month": 9,
+        "reps": 25,
+        "cards": 6000,
+        "profit": 84000,
+        "cum": 305760
+      },
+      {
+        "month": 10,
+        "reps": 30,
+        "cards": 7200,
+        "profit": 100800,
+        "cum": 406560
+      },
+      {
+        "month": 11,
+        "reps": 40,
+        "cards": 9600,
+        "profit": 134400,
+        "cum": 540960
+      },
+      {
+        "month": 12,
+        "reps": 50,
+        "cards": 12000,
+        "profit": 168000,
+        "cum": 708960
+      }
+    ]
+  }
+}
