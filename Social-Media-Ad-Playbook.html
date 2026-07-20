@@ -9,7 +9,6 @@
   :root{ --ink:#0e1726; --muted:#5b6b82; --line:#e2e8f0; --bg:#fff; --brand:#7c3aed; --brand2:#5b21b6;
     --accent:#f59e0b; --good:#16a34a; --soft:#f5f3ff; --soft2:#f8fafc; --warn:#fff7ed; --warnline:#fed7aa; }
   *{box-sizing:border-box}
-  html{-webkit-print-color-adjust:exact; print-color-adjust:exact}
   body{margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     color:var(--ink); background:#eef2f6; line-height:1.55; font-size:15px}
   .page{max-width:1000px; margin:0 auto; background:var(--bg); padding:52px 56px}
@@ -27,7 +26,7 @@
   thead th{background:var(--brand); color:#fff; font-weight:600}
   tbody tr:nth-child(even){background:var(--soft2)}
   .funnel{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin:18px 0; text-align:center}
-  .funnel .step{background:var(--soft2); border:1px solid var(--line); border-radius:12px; padding:14px 10px; position:relative}
+  .funnel .step{background:var(--soft2); border:1px solid var(--line); border-radius:12px; padding:14px 10px}
   .funnel .step .n{width:26px;height:26px;line-height:26px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;font-size:13px;margin:0 auto 8px}
   .funnel .step h4{margin:0 0 4px; font-size:13.5px}
   .funnel .step p{margin:0; font-size:11.5px; color:var(--muted); line-height:1.35}
@@ -49,11 +48,31 @@
   .kpi div:last-child{border-right:none}
   .kpi .v{font-size:20px; font-weight:700; color:var(--brand2)}
   .kpi .k{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.03em}
-  .lang{margin:26px 0 6px; font-size:20px; font-weight:700; color:var(--ink); display:flex; align-items:center; gap:10px}
-  .lang .flag{font-size:24px}
   small.note{color:var(--muted); font-size:12px}
   .foot{margin-top:40px; padding-top:16px; border-top:2px solid var(--line); color:var(--muted); font-size:13px}
-  @media (max-width:720px){ .grid,.funnel,.kpi{grid-template-columns:1fr} }
+  /* product */
+  .prod{display:grid; grid-template-columns:repeat(2,1fr); gap:22px; margin:18px 0}
+  .prod figure{margin:0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#fff}
+  .prod img{width:100%; display:block}
+  .prod figcaption{padding:10px 14px; font-size:13px; color:var(--muted); font-weight:600}
+  /* calculator */
+  .calc{background:linear-gradient(160deg,#faf5ff,#f0f9ff); border:1px solid #ddd6fe; border-radius:18px; padding:26px 28px; margin:18px 0}
+  .calc h3{margin-top:0}
+  .calc .out{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:18px 0}
+  .calc .out .box{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px; text-align:center}
+  .calc .out .box .v{font-size:30px; font-weight:800; color:var(--brand2); letter-spacing:-.02em; line-height:1}
+  .calc .out .box .k{font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.04em; margin-top:6px}
+  .calc .out .box.year{background:#7c3aed; border-color:#7c3aed}
+  .calc .out .box.year .v{color:#fff; font-size:34px}
+  .calc .out .box.year .k{color:#e9d5ff}
+  .calc label{font-size:13px; font-weight:700; color:var(--ink); display:flex; justify-content:space-between; margin:16px 0 6px}
+  .calc label span{color:var(--brand2)}
+  .calc input[type=range]{width:100%; height:8px; border-radius:6px; accent-color:#7c3aed; cursor:pointer}
+  .calc .sentence{font-size:15.5px; text-align:center; margin:14px 0 2px; color:#243247}
+  .calc .sentence b{color:var(--brand2)}
+  .calc .brk{font-size:12px; color:var(--muted); text-align:center; margin-top:8px}
+  .calc .assump{font-size:11.5px; color:var(--muted); margin-top:14px; border-top:1px dashed #ddd6fe; padding-top:10px}
+  @media (max-width:720px){ .grid,.funnel,.kpi,.prod,.calc .out{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -62,224 +81,236 @@
   <a class="back" href="index.html">&larr; Back to hub</a>
   <div style="margin-top:12px"><span class="tag">CONFIDENTIAL</span><span class="tag">GROWTH PLAYBOOK</span></div>
   <h1>Social Media Ad Playbook</h1>
-  <p class="sub">How we use paid + organic ads on Instagram and Facebook to recruit a salesforce, drive them to a landing page, and let them try the product before they sign up. Includes 10 ready-to-post ad creatives (5 English, 5 Spanish) with captions.</p>
+  <p class="sub">How we use paid + organic ads on Instagram and Facebook to recruit a salesforce, drive them to a landing page, and let them try the product before they sign up. Includes an interactive income calculator and 10 ready-to-post ad creatives (5 English, 5 Spanish).</p>
 
   <h2>1. The whole idea in one line</h2>
-  <p class="lead">We run cheap, punchy ads that promise <b>real money for easy work</b> ($20 per sale + $5/month residual), send clickers to a <b>landing page where they can tap a live demo card themselves</b>, and convert them into signed-up reps who order cards and start selling. The ad's only job is to get the click. The landing page's only job is to make them believe it works and sign up.</p>
+  <p class="lead">We run bold, aspirational ads that promise a real income opportunity - <b>$50K to $100K a year with zero investment</b> - send clickers to a <b>landing page where they can tap a live demo card themselves</b>, and convert them into signed-up reps who order cards and start selling. The ad's only job is to get the click. The landing page's only job is to make them believe it works and sign up.</p>
 
   <div class="funnel">
-    <div class="step"><div class="n">1</div><h4>The Ad</h4><p>IG/FB post or paid ad. Hook: "$20 per sale."</p></div>
+    <div class="step"><div class="n">1</div><h4>The Ad</h4><p>IG/FB post or paid ad. Hook: "$50K-$100K a year."</p></div>
     <div class="arrow">&rarr;</div>
-    <div class="step"><div class="n">2</div><h4>Landing Page</h4><p>They tap a live demo card + see the money math.</p></div>
+    <div class="step"><div class="n">2</div><h4>Landing Page</h4><p>They tap a live demo + use the income calculator.</p></div>
     <div class="arrow">&rarr;</div>
     <div class="step"><div class="n">3</div><h4>Sign Up &amp; Sell</h4><p>Free account, order cards at $5, hit the streets.</p></div>
   </div>
-  <p><small class="note">Note: the demo landing page ("try it yourself") is the next thing to build - it is what turns curiosity into signups. This playbook is designed to feed it.</small></p>
 
-  <h2>2. Who we target</h2>
+  <h2>2. What you're actually selling</h2>
+  <p>The product is a simple, premium review device a business keeps on the counter or window. A customer taps it (NFC) or scans the QR, and it opens the review flow. It comes as an acrylic table stand, a window sticker, or a wallet-size card - same technology. Here is the on-brand look, in English and Spanish:</p>
+  <div class="prod">
+    <figure><img src="ads/web/product-en.jpg" alt="Acrylic review stand (English)"><figcaption>English acrylic counter stand &middot; <a href="ads/product-en.png" download>download full-res</a></figcaption></figure>
+    <figure><img src="ads/web/product-es.jpg" alt="Soporte de reseñas en acrílico (Español)"><figcaption>Spanish acrylic counter stand &middot; <a href="ads/product-es.png" download>descargar alta resolución</a></figcaption></figure>
+  </div>
+  <p><small class="note">Design is fully customizable per business and per platform (Google, Yelp, Facebook). We show "We'd love your feedback" because our flow sends everyone through a quick feedback step first (compliant), then on to the public review - it is not a review-gating "Google only" card.</small></p>
+
+  <h2>3. Who we target</h2>
   <ul>
-    <li><b>Side-hustlers &amp; gig workers</b> - rideshare drivers, delivery, servers who want daytime income.</li>
+    <li><b>Side-hustlers &amp; gig workers</b> - rideshare, delivery, servers who want daytime income.</li>
     <li><b>Students &amp; young adults</b> - comfortable on their phone, want flexible cash.</li>
-    <li><b>Direct-sales / MLM veterans</b> - already know how to pitch, hate the inventory. This has none.</li>
-    <li><b>Bilingual communities</b> - the Spanish creatives open up a huge, under-served recruiting pool (this is why we made both).</li>
+    <li><b>Direct-sales / MLM veterans</b> - already know how to pitch, hate inventory. This has none.</li>
+    <li><b>Bilingual communities</b> - the Spanish creatives open a huge, under-served recruiting pool.</li>
   </ul>
-  <p><b>Paid targeting (Meta Ads):</b> ages 18-45, interests in "side hustle / extra income / entrepreneurship / direct sales," plus a broad "advantage+" audience and let Meta optimize. Retarget anyone who visited the landing page but did not sign up.</p>
+  <p><b>Paid targeting (Meta Ads):</b> ages 18-45, interests in "side hustle / extra income / entrepreneurship / direct sales," plus a broad Advantage+ audience. Retarget anyone who visited the landing page but did not sign up.</p>
 
-  <h2>3. The offer we always lead with</h2>
+  <h2>4. The offer we always lead with</h2>
   <div class="kpi">
     <div><div class="v">$20</div><div class="k">Per card sold</div></div>
     <div><div class="v">$5/mo</div><div class="k">Residual, 12 months</div></div>
-    <div><div class="v">$80</div><div class="k">Max per client (yr 1)</div></div>
-    <div><div class="v">$60/day</div><div class="k">At 3 sales/day</div></div>
+    <div><div class="v">$0</div><div class="k">To get started</div></div>
+    <div><div class="v">$50K-$100K</div><div class="k">Full-time potential</div></div>
   </div>
-  <p>Sell the card for $30, keep $20. If the business takes the $15/month reputation plan, the rep earns <b>$5/month for a full year</b> on top. That means a single 5-minute sale is worth up to <b>$80</b> in year one. That "get paid again every month" angle is the strongest hook - most of the ads hammer it.</p>
+  <p>Sell the card for $30, keep $20. If the business takes the $15/month reputation plan, the rep earns <b>$5/month for a full year</b> on top. Zero investment, no inventory, no fees. Stacked across a full-time effort, that builds into a six-figure yearly income - which the calculator below lets a recruit prove to themselves.</p>
 
-  <h2>4. Organic vs. paid - run both</h2>
+  <h2>5. Income calculator (put this on the landing page)</h2>
+  <p>This is the interactive slider - drag it and the numbers update live. It is built to be dropped straight onto the recruiting landing page so a prospect can see their own potential.</p>
+
+  <div class="calc" id="calc">
+    <h3>How much could you make?</h3>
+    <div class="sentence" id="sentence"></div>
+    <div class="out">
+      <div class="box"><div class="v" id="daily">$0</div><div class="k">Per day (card sales)</div></div>
+      <div class="box"><div class="v" id="monthly">$0</div><div class="k">Per month (avg)</div></div>
+      <div class="box year"><div class="v" id="yearly">$0</div><div class="k">Per year</div></div>
+    </div>
+    <label>Cards you sell per day <span id="spdVal">5</span></label>
+    <input type="range" id="spd" min="1" max="15" step="1" value="5">
+    <label>How many take the $15/mo plan <span id="attVal">45%</span></label>
+    <input type="range" id="att" min="0" max="80" step="5" value="45">
+    <div class="brk" id="brk"></div>
+    <div class="assump">Assumes ~24 selling days/month, $20 kept per card, and $5/month residual for 12 months on each subscriber. Year-one figure accounts for residuals building up month by month. <b>Illustration only - earnings vary and are not guaranteed.</b></div>
+  </div>
+
+  <h2>6. Why the $50K-$100K claim is real (and defensible)</h2>
+  <p>The big number is not made up - it is the math of the offer at a full-time pace. Same assumptions as the calculator:</p>
+  <table>
+    <thead><tr><th>Effort</th><th>Cards/day</th><th>Card income/yr</th><th>Residual income/yr</th><th>Total/yr</th></tr></thead>
+    <tbody>
+      <tr><td>Part-time</td><td>2</td><td>$11,520</td><td>~$8,400</td><td><b>~$20,000</b></td></tr>
+      <tr><td>Full-time</td><td>5</td><td>$28,800</td><td>~$21,000</td><td><b>~$50,000</b></td></tr>
+      <tr><td>Top performer</td><td>10</td><td>$57,600</td><td>~$42,000</td><td><b>~$100,000</b></td></tr>
+    </tbody>
+  </table>
+  <p><small class="note">This is why the ads say "up to" and "top reps" - 5-10 sales/day is a real full-time pace, not what a casual seller hits. Being able to show this table is what keeps the claim honest and keeps the ad account safe.</small></p>
+
+  <h2>7. Organic vs. paid - run both</h2>
   <table>
     <thead><tr><th>Channel</th><th>How to use it</th><th>Cost</th></tr></thead>
     <tbody>
-      <tr><td><b>Organic posts</b> (feed)</td><td>Post 3-5x/week rotating these creatives. Pin the best one. Reply to every "info" comment fast.</td><td>Free</td></tr>
-      <tr><td><b>Stories / Reels</b></td><td>Re-cut the 4:5 images as full-screen stories with a "swipe up / link in bio." Add a 10-sec talking clip of a rep counting cash.</td><td>Free</td></tr>
-      <tr><td><b>Paid ads</b> (Meta Ads Manager)</td><td>Boost the 2-3 best performers. Objective: "Leads" or "Traffic" to the landing page. Start $10-20/day per market.</td><td>$300-600/mo to start</td></tr>
-      <tr><td><b>Local groups</b></td><td>Post the "make money" creatives in city buy/sell/jobs Facebook groups (where rules allow).</td><td>Free</td></tr>
+      <tr><td><b>Organic posts</b></td><td>Post 3-5x/week rotating these creatives. Pin the best one. Reply to every comment fast.</td><td>Free</td></tr>
+      <tr><td><b>Stories / Reels</b></td><td>Re-cut the 4:5 images as full-screen stories with "link in bio." Add a 10-sec clip of a rep counting cash.</td><td>Free</td></tr>
+      <tr><td><b>Paid ads</b> (Meta)</td><td>Boost the 2-3 best performers. Objective: Leads or Traffic to the landing page. Start $10-20/day per market.</td><td>$300-600/mo</td></tr>
+      <tr><td><b>Local groups</b></td><td>Post the income creatives in city buy/sell/jobs Facebook groups where rules allow.</td><td>Free</td></tr>
     </tbody>
   </table>
 
-  <h2>5. A simple starting budget &amp; what to expect</h2>
-  <p>Illustrative, to set expectations - real numbers depend on your market and creative:</p>
-  <table>
-    <thead><tr><th>Metric</th><th>Conservative</th><th>Good</th></tr></thead>
-    <tbody>
-      <tr><td>Daily ad spend</td><td>$15/day</td><td>$40/day</td></tr>
-      <tr><td>Cost per landing-page click</td><td>$0.80</td><td>$0.40</td></tr>
-      <tr><td>Clicks / month</td><td>~560</td><td>~3,000</td></tr>
-      <tr><td>Rep signups (5% of clicks)</td><td>~28/mo</td><td>~150/mo</td></tr>
-      <tr><td>Active sellers (30% of signups)</td><td>~8/mo</td><td>~45/mo</td></tr>
-    </tbody>
-  </table>
-  <p><small class="note">Every active seller you recruit compounds the whole business (see the Business &amp; Financial Report). Recruiting is the growth engine; these ads are the fuel.</small></p>
-
-  <h2>6. How to A/B test (find the winner fast)</h2>
+  <h2>8. A/B test to find the winner</h2>
   <ol>
-    <li>Run <b>3-4 creatives at once</b>, same budget, same audience, for 4-5 days.</li>
+    <li>Run <b>3-4 creatives at once</b>, same budget/audience, for 4-5 days.</li>
     <li>Kill the bottom half by <b>cost-per-click</b> and <b>cost-per-signup</b>. Do not judge by likes.</li>
-    <li>Pour budget into the winner. Then make 2 new variations of the winner and repeat.</li>
-    <li>Test <b>hook angles</b>: "money now" (ad 1, 5) vs "residual income" (ad 2) vs "no experience" (ad 3) vs "be your own boss" (ad 4). Different cities respond differently.</li>
+    <li>Pour budget into the winner, then make 2 variations of it and repeat.</li>
+    <li>Test hook angles: "big income" (ad 1) vs "zero cost" (ad 2) vs "no experience" (ad 3) vs "quit your job" (ad 4) vs "easiest sale" (ad 5).</li>
   </ol>
 
-  <h2>7. The creatives - English</h2>
-  <p>Each image is ready to post. The caption below it is the post text - copy it as-is or tweak. Tap "Download full-res" for the original 2K file to upload to Instagram/Facebook. Replace the DM/CTA words with your real handle or link.</p>
-
+  <h2>9. The creatives - English</h2>
+  <p>Each image is ready to post. Copy the caption below it. Tap "Download full-res" for the original 2K file. Swap the DM/CTA words for your real handle or link.</p>
   <div class="grid">
-    <div class="ad">
-      <img src="ads/web/en-1.jpg" alt="Get paid $20 per sale">
-      <div class="body"><div class="hd">EN 1 &middot; Money now</div>
-        <div class="cap">💸 Want to make $20 every time you say yes?
+    <div class="ad"><img src="ads/web/en-1.jpg" alt="$50k to $100k a year">
+      <div class="body"><div class="hd">EN 1 &middot; Big income</div>
+        <div class="cap">You can make $50,000 to $100,000 a year - with ZERO money to start. 💰
 
-We're hiring local reps to sell a dead-simple product to restaurants, salons &amp; shops: a tap-to-review card that gets them more 5-star Google reviews.
+The product? A simple tap card that gets local businesses more 5-star reviews. You sell it for $30, keep $20, and earn $5/month residual on every subscriber.
 
-✅ You sell it for $30 → you keep $20
-✅ If they add our $15/mo plan, you earn $5/month for a FULL YEAR on top
-✅ No experience, no inventory - just talk to local businesses
+Full-time reps build this into six figures. Part-timers pocket serious side cash. No inventory. No fees. No experience.
+👉 DM "INCOME" and we'll show you how.
+*Earnings vary. No income is guaranteed.</div>
+        <a class="dl" href="ads/en-1.png" download>⬇ Download full-res</a></div></div>
+    <div class="ad"><img src="ads/web/en-2.jpg" alt="$0 to start, 6 figures to earn">
+      <div class="body"><div class="hd">EN 2 &middot; Zero cost</div>
+        <div class="cap">$0 to start. Six figures to earn. 🚀
 
-Work your own hours. Get paid per sale.
-👉 DM us "REP" to start.</div>
-        <a class="dl" href="ads/en-1.png" download>⬇ Download full-res</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/en-2.jpg" alt="$20 per sale plus $5 per month">
-      <div class="body"><div class="hd">EN 2 &middot; Residual income</div>
-        <div class="cap">Most sales jobs pay you once. This one pays you all year. 📆
+The easiest thing you'll ever sell: a card local shops tap to collect Google reviews. $30 sale, $20 in your pocket every time - plus monthly residual income that stacks.
 
-Sign a local business to our reputation tool and earn:
-• $20 the moment they buy the card
-• $5/month for 12 months if they take the $15 plan
-
-That's up to $80 from a single 5-minute conversation.
-👉 Comment "INFO" or DM to apply.</div>
-        <a class="dl" href="ads/en-2.png" download>⬇ Download full-res</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/en-3.jpg" alt="No experience needed">
+Do it on the side or go all in.
+👉 Apply now - link in bio.
+*Earnings vary. No income guaranteed.</div>
+        <a class="dl" href="ads/en-2.png" download>⬇ Download full-res</a></div></div>
+    <div class="ad"><img src="ads/web/en-3.jpg" alt="Six figures, no experience">
       <div class="body"><div class="hd">EN 3 &middot; No experience</div>
-        <div class="cap">If you can walk into a shop and smile, you can do this. 😄
+        <div class="cap">No degree. No experience. No investment. Just $50K-$100K potential. 📈
 
-We give you everything: the product, the pitch, and the demo that sells itself. You keep $20 per card + monthly residuals.
+If you can talk to a shop owner for 5 minutes, you can sell this. We hand you the product, the pitch, and the training.
+👉 Comment "START" to get in.
+*Top reps. Results vary.</div>
+        <a class="dl" href="ads/en-3.png" download>⬇ Download full-res</a></div></div>
+    <div class="ad"><img src="ads/web/en-4.jpg" alt="Quit your 9 to 5">
+      <div class="body"><div class="hd">EN 4 &middot; Quit your 9-5</div>
+        <div class="cap">Imagine quitting your 9 to 5. 👋
 
-Perfect side hustle or full-time hustle.
-👉 DM "START" and we'll set you up this week.</div>
-        <a class="dl" href="ads/en-3.png" download>⬇ Download full-res</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/en-4.jpg" alt="Be your own boss">
-      <div class="body"><div class="hd">EN 4 &middot; Be your own boss</div>
-        <div class="cap">No boss. No schedule. No ceiling. 🚀
+Our full-time reps are on pace for $50,000-$100,000 a year selling a simple review card to local businesses - with zero money down.
 
-Every local business is a $20 payday - plus $5/month recurring. Sell 3 a day and that's $60/day cash, before residuals stack up.
+$20 per sale. Monthly residuals. Your own schedule.
+👉 DM us to start this week.
+*Earnings vary. Not guaranteed.</div>
+        <a class="dl" href="ads/en-4.png" download>⬇ Download full-res</a></div></div>
+    <div class="ad"><img src="ads/web/en-5.jpg" alt="The easiest sale ever">
+      <div class="body"><div class="hd">EN 5 &middot; Easiest sale</div>
+        <div class="cap">The easiest sale in America might also be the most profitable. 💵
 
-Your city is full of shops that need this.
-👉 Sign up at the link in bio.</div>
-        <a class="dl" href="ads/en-4.png" download>⬇ Download full-res</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/en-5.jpg" alt="3 sales a day equals 60 dollars a day">
-      <div class="body"><div class="hd">EN 5 &middot; Daily math</div>
-        <div class="cap">3 sales a day = $60 a day. Every day. 💰
+A $30 tap card that businesses actually want. You keep $20 each and earn $5/month per subscriber - all year. Stack enough and you're at six figures.
 
-Simple product, real money. You sell a tap-to-review card local businesses actually want, keep $20 each, and earn $5/month residual on every subscriber.
-
-Start this week.
-👉 DM "$60" to get the rep kit.</div>
-        <a class="dl" href="ads/en-5.png" download>⬇ Download full-res</a>
-      </div>
-    </div>
+$0 to join. Start today.
+👉 Sign up free - link in bio.
+*Earnings vary. No income guaranteed.</div>
+        <a class="dl" href="ads/en-5.png" download>⬇ Download full-res</a></div></div>
   </div>
 
-  <h2>8. Los anuncios - Español</h2>
-  <p>Cada imagen está lista para publicar. El texto debajo es el pie de publicación - cópialo tal cual o ajústalo. Toca "Descargar" para el archivo original 2K y súbelo a Instagram/Facebook. Cambia el "escríbenos"/enlace por tu usuario real.</p>
-
+  <h2>10. Los anuncios - Español</h2>
+  <p>Cada imagen está lista para publicar. Copia el texto debajo. Toca "Descargar" para el archivo original 2K. Cambia el "escríbenos"/enlace por tu usuario real.</p>
   <div class="grid">
-    <div class="ad">
-      <img src="ads/web/es-1.jpg" alt="Gana 20 dolares por venta">
-      <div class="body"><div class="hd">ES 1 &middot; Dinero ya</div>
-        <div class="cap">💸 ¿Quieres ganar $20 USD cada vez que digas que sí?
+    <div class="ad"><img src="ads/web/es-1.jpg" alt="Gana 50 mil a 100 mil al ano">
+      <div class="body"><div class="hd">ES 1 &middot; Gran ingreso</div>
+        <div class="cap">Puedes ganar $50,000 a $100,000 dólares al año - con CERO inversión. 💰
 
-Buscamos vendedores locales para ofrecer un producto súper simple a restaurantes, salones y tiendas: una tarjeta de "toca y califica" que les trae más reseñas de 5 estrellas en Google.
+¿El producto? Una tarjeta simple que le trae más reseñas de 5 estrellas a los negocios locales. La vendes en $30, te quedas con $20, y ganas $5 al mes por cada suscriptor.
 
-✅ La vendes en $30 → te quedas con $20
-✅ Si toman el plan de $15/mes, ganas $5 al mes durante TODO UN AÑO
-✅ Sin experiencia, sin inventario - solo habla con negocios locales
+Tiempo completo llega a seis cifras. Medio tiempo hace un buen dinero extra. Sin inventario. Sin cuotas. Sin experiencia.
+👉 Escribe "INGRESO" y te mostramos cómo.
+*Los ingresos varían. No se garantiza ningún ingreso.</div>
+        <a class="dl" href="ads/es-1.png" download>⬇ Descargar alta resolución</a></div></div>
+    <div class="ad"><img src="ads/web/es-2.jpg" alt="0 para empezar">
+      <div class="body"><div class="hd">ES 2 &middot; Cero costo</div>
+        <div class="cap">$0 para empezar. Seis cifras por ganar. 🚀
 
-Tú pones el horario. Te pagan por venta.
-👉 Escríbenos "VENDEDOR" para empezar.</div>
-        <a class="dl" href="ads/es-1.png" download>⬇ Descargar alta resolución</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/es-2.jpg" alt="20 por venta mas 5 al mes">
-      <div class="body"><div class="hd">ES 2 &middot; Ingreso recurrente</div>
-        <div class="cap">La mayoría de los trabajos te pagan una vez. Este te paga todo el año. 📆
+Es lo más fácil que vas a vender: una tarjeta que los negocios tocan para recibir reseñas de Google. Venta de $30, $20 para ti cada vez - más ingresos mensuales que se acumulan.
 
-Inscribe un negocio local y gana:
-• $20 apenas compran la tarjeta
-• $5 al mes por 12 meses si toman el plan de $15
-
-Hasta $80 de una sola conversación de 5 minutos.
-👉 Comenta "INFO" o escríbenos.</div>
-        <a class="dl" href="ads/es-2.png" download>⬇ Descargar alta resolución</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/es-3.jpg" alt="Sin experiencia">
+Hazlo de medio tiempo o entra de lleno.
+👉 Aplica ya - enlace en la bio.
+*Los ingresos varían. Sin garantía.</div>
+        <a class="dl" href="ads/es-2.png" download>⬇ Descargar alta resolución</a></div></div>
+    <div class="ad"><img src="ads/web/es-3.jpg" alt="Seis cifras sin experiencia">
       <div class="body"><div class="hd">ES 3 &middot; Sin experiencia</div>
-        <div class="cap">Si sabes sonreír y hablar, puedes hacer esto. 😄
+        <div class="cap">Sin título. Sin experiencia. Sin inversión. Solo el potencial de $50 a $100 mil. 📈
 
-Te damos todo: el producto, el guion y la demostración que se vende sola. Te quedas con $20 por tarjeta + ingresos mensuales.
+Si puedes hablar con el dueño de una tienda por 5 minutos, puedes vender esto. Te damos el producto, el guion y la capacitación.
+👉 Comenta "EMPEZAR" para entrar.
+*Los mejores vendedores. Los resultados varían.</div>
+        <a class="dl" href="ads/es-3.png" download>⬇ Descargar alta resolución</a></div></div>
+    <div class="ad"><img src="ads/web/es-4.jpg" alt="Deja tu trabajo de 9 a 5">
+      <div class="body"><div class="hd">ES 4 &middot; Deja tu 9 a 5</div>
+        <div class="cap">Imagina renunciar a tu trabajo de 9 a 5. 👋
 
-Ideal como ingreso extra o de tiempo completo.
-👉 Escríbenos "EMPEZAR" y te preparamos esta semana.</div>
-        <a class="dl" href="ads/es-3.png" download>⬇ Descargar alta resolución</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/es-4.jpg" alt="Se tu propio jefe">
-      <div class="body"><div class="hd">ES 4 &middot; Sé tu propio jefe</div>
-        <div class="cap">Sin jefe. Sin horario. Sin límite. 🚀
+Nuestros vendedores de tiempo completo van camino a $50,000-$100,000 al año vendiendo una simple tarjeta de reseñas a negocios locales - sin poner un peso.
 
-Cada negocio local son $20 - más $5 al mes recurrente. Vende 3 al día y son $60 diarios, antes de que se acumulen tus ingresos mensuales.
+$20 por venta. Ingresos mensuales. Tu propio horario.
+👉 Escríbenos para empezar esta semana.
+*Los ingresos varían. Sin garantía.</div>
+        <a class="dl" href="ads/es-4.png" download>⬇ Descargar alta resolución</a></div></div>
+    <div class="ad"><img src="ads/web/es-5.jpg" alt="La venta mas facil">
+      <div class="body"><div class="hd">ES 5 &middot; La venta más fácil</div>
+        <div class="cap">La venta más fácil también puede ser la más rentable. 💵
 
-Tu ciudad está llena de negocios que necesitan esto.
-👉 Regístrate en el enlace.</div>
-        <a class="dl" href="ads/es-4.png" download>⬇ Descargar alta resolución</a>
-      </div>
-    </div>
-    <div class="ad">
-      <img src="ads/web/es-5.jpg" alt="3 ventas al dia igual 60 dolares">
-      <div class="body"><div class="hd">ES 5 &middot; La cuenta diaria</div>
-        <div class="cap">3 ventas al día = $60 al día. Todos los días. 💰
+Una tarjeta de $30 que los negocios sí quieren. Te quedas con $20 de cada una y ganas $5 al mes por suscriptor - todo el año. Junta suficientes y llegas a seis cifras.
 
-Producto fácil, dinero real. Vendes una tarjeta que los negocios sí quieren, te quedas con $20 de cada una y ganas $5 al mes por cada suscriptor.
-
-Empieza esta semana.
-👉 Escríbenos "$60" para recibir el kit de vendedor.</div>
-        <a class="dl" href="ads/es-5.png" download>⬇ Descargar alta resolución</a>
-      </div>
-    </div>
+$0 para unirte. Empieza hoy.
+👉 Regístrate gratis - enlace en la bio.
+*Los ingresos varían. No se garantiza ingreso.</div>
+        <a class="dl" href="ads/es-5.png" download>⬇ Descargar alta resolución</a></div></div>
   </div>
 
-  <div class="callout good">
-    <h3>Honest note on ad claims</h3>
-    <p>The income figures ($20/sale, $5/month, $60/day) are real per-sale mechanics, but "$60/day" assumes 3 sales a day, which not everyone will hit. Meta may flag ads that read as guaranteed income. Keep the wording as "earn up to" / "you can make," never "guaranteed," to stay inside Facebook/Instagram ad policy and avoid account bans.</p>
+  <div class="callout">
+    <h3>Important: keep the income claims defensible</h3>
+    <p>Meta and the FTC scrutinize big income promises. Every creative already carries an "earnings vary / not guaranteed" line - <b>keep it there</b>. Always phrase potential as "you can earn" / "up to" / "top reps," never "you will make" or "guaranteed." Back the numbers with the calculator and the table in section 6. This keeps the ads bold but inside Facebook/Instagram ad policy so the account does not get banned.</p>
   </div>
 
   <div class="foot">
-    Reputation Engine &middot; Social Media Ad Playbook &middot; 10 creatives generated for Instagram &amp; Facebook (4:5). Companion documents: Business &amp; Financial Report, Technical Specification, Plan de Negocio (Colombia). Next build: the "try-it-yourself" demo landing page these ads point to.
+    Reputation Engine &middot; Social Media Ad Playbook &middot; 10 creatives (5 EN, 5 ES) + product mockups + interactive income calculator. Companion documents: Business &amp; Financial Report, Technical Specification, Plan de Negocio (Colombia). Next build: the "try-it-yourself" demo landing page these ads point to.
   </div>
 
 </div>
+
+<script>
+(function(){
+  var WORKDAYS=24, COMMISSION=20, RESIDUAL=5, RESIDUAL_SUM=78; // 12+11+...+1
+  var spd=document.getElementById('spd'), att=document.getElementById('att');
+  function money(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
+  function roundTo(n,step){ return Math.round(n/step)*step; }
+  function update(){
+    var s=parseFloat(spd.value), a=parseFloat(att.value)/100;
+    var dailyCard = s*COMMISSION;
+    var yearlyCard = s*WORKDAYS*COMMISSION*12;
+    var newSubs = s*WORKDAYS*a;
+    var yearlyResidual = newSubs*RESIDUAL*RESIDUAL_SUM;
+    var yearlyTotal = yearlyCard + yearlyResidual;
+    var monthlyAvg = yearlyTotal/12;
+    document.getElementById('spdVal').textContent = s;
+    document.getElementById('attVal').textContent = Math.round(a*100)+'%';
+    document.getElementById('daily').textContent = money(roundTo(dailyCard,1));
+    document.getElementById('monthly').textContent = money(roundTo(monthlyAvg,50));
+    document.getElementById('yearly').textContent = money(roundTo(yearlyTotal,1000));
+    document.getElementById('sentence').innerHTML = 'If you sell <b>'+s+' a day</b>, you’re on track for about <b>'+money(roundTo(yearlyTotal,1000))+' a year</b>.';
+    document.getElementById('brk').textContent = 'Breakdown: '+money(roundTo(yearlyCard,100))+'/yr from card sales + '+money(roundTo(yearlyResidual,100))+'/yr in monthly residuals.';
+  }
+  spd.addEventListener('input',update); att.addEventListener('input',update); update();
+})();
+</script>
 </body>
 </html>
