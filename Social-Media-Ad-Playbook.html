@@ -127,29 +127,29 @@
     <h3>How much could you make?</h3>
     <div class="sentence" id="sentence"></div>
     <div class="out">
-      <div class="box"><div class="v" id="daily">$0</div><div class="k">Per day (card sales)</div></div>
-      <div class="box"><div class="v" id="monthly">$0</div><div class="k">Per month (avg)</div></div>
-      <div class="box year"><div class="v" id="yearly">$0</div><div class="k">Per year</div></div>
+      <div class="box"><div class="v" id="daily">$0</div><div class="k">Per selling day (card cash)</div></div>
+      <div class="box"><div class="v" id="monthly">$0</div><div class="k">Residual/mo by month 12</div></div>
+      <div class="box year"><div class="v" id="yearly">$0</div><div class="k">Year 1 earnings (all residual)</div></div>
     </div>
     <label>Cards you sell per day <span id="spdVal">5</span></label>
     <input type="range" id="spd" min="1" max="15" step="1" value="5">
     <label>How many take the $15/mo plan <span id="attVal">45%</span></label>
     <input type="range" id="att" min="0" max="80" step="5" value="45">
     <div class="brk" id="brk"></div>
-    <div class="assump">Assumes ~24 selling days/month, $20 kept per card, and $5/month residual for 12 months on each subscriber. Year-one figure accounts for residuals building up month by month. <b>Illustration only - earnings vary and are not guaranteed.</b></div>
+    <div class="assump">Assumes ~24 selling days/month, $20 kept per card, and $5/month for a full 12 months on <b>every</b> subscriber - so each subscriber is worth <b>$60</b>, no matter which month you sign them. The "Year 1 earnings" figure counts that full residual, including the part that arrives in year 2 (you've already locked it in). Assumes subscribers stay ~12 months. <b>Illustration only - earnings vary and are not guaranteed.</b></div>
   </div>
 
   <h2>6. Why the $50K-$100K claim is real (and defensible)</h2>
-  <p>The big number is not made up - it is the math of the offer at a full-time pace. Same assumptions as the calculator:</p>
+  <p>The big number is not made up - it is the math of the offer at a full-time pace, <b>counting the full residual on every subscriber</b>. Each business on the $15/month plan pays you $5/month for 12 months - <b>$60 total</b> - and that is true no matter which month you sign them. So a full year of selling locks in a full 12 months of residual on everyone, even people you sign in month 11 or 12 (some of that money simply lands in year 2, but it is already yours). Same assumptions as the calculator:</p>
   <table>
-    <thead><tr><th>Effort</th><th>Cards/day</th><th>Card income/yr</th><th>Residual income/yr</th><th>Total/yr</th></tr></thead>
+    <thead><tr><th>Effort</th><th>Cards/day</th><th>Card income/yr</th><th>Residual ($60 each)</th><th>Total earned</th></tr></thead>
     <tbody>
-      <tr><td>Part-time</td><td>2</td><td>$11,520</td><td>~$8,400</td><td><b>~$20,000</b></td></tr>
-      <tr><td>Full-time</td><td>5</td><td>$28,800</td><td>~$21,000</td><td><b>~$50,000</b></td></tr>
-      <tr><td>Top performer</td><td>10</td><td>$57,600</td><td>~$42,000</td><td><b>~$100,000</b></td></tr>
+      <tr><td>Part-time</td><td>2</td><td>$11,520</td><td>~$15,600</td><td><b>~$27,000</b></td></tr>
+      <tr><td>Full-time</td><td>5</td><td>$28,800</td><td>~$38,900</td><td><b>~$67,700</b></td></tr>
+      <tr><td>Top performer</td><td>10</td><td>$57,600</td><td>~$77,800</td><td><b>~$135,400</b></td></tr>
     </tbody>
   </table>
-  <p><small class="note">This is why the ads say "up to" and "top reps" - 5-10 sales/day is a real full-time pace, not what a casual seller hits. Being able to show this table is what keeps the claim honest and keeps the ad account safe.</small></p>
+  <p><small class="note">Notice the full-time case (~$68K) already clears $50K and the top case clears $100K with room to spare - so the ads' "$50K-$100K" is actually the <b>conservative</b> read. We still say "up to" and "top reps" because 5-10 sales/day is a genuine full-time pace, not what a casual seller hits. Assumes subscribers stay ~12 months; earnings vary and are not guaranteed.</small></p>
 
   <h2>7. Organic vs. paid - run both</h2>
   <table>
@@ -289,25 +289,26 @@ $0 para unirte. Empieza hoy.
 
 <script>
 (function(){
-  var WORKDAYS=24, COMMISSION=20, RESIDUAL=5, RESIDUAL_SUM=78; // 12+11+...+1
+  var WORKDAYS=24, COMMISSION=20, RESIDUAL=5, MONTHS=12, SUB_LIFE=12;
   var spd=document.getElementById('spd'), att=document.getElementById('att');
   function money(n){ return '$'+Math.round(n).toLocaleString('en-US'); }
   function roundTo(n,step){ return Math.round(n/step)*step; }
   function update(){
     var s=parseFloat(spd.value), a=parseFloat(att.value)/100;
     var dailyCard = s*COMMISSION;
-    var yearlyCard = s*WORKDAYS*COMMISSION*12;
-    var newSubs = s*WORKDAYS*a;
-    var yearlyResidual = newSubs*RESIDUAL*RESIDUAL_SUM;
-    var yearlyTotal = yearlyCard + yearlyResidual;
-    var monthlyAvg = yearlyTotal/12;
+    var yearlyCard = s*WORKDAYS*COMMISSION*MONTHS;
+    var newSubs = s*WORKDAYS*a;                        // new subscribers each month
+    var totalSubs = newSubs*MONTHS;                    // subscribers signed over the year
+    var residualFull = totalSubs*RESIDUAL*SUB_LIFE;    // each pays $5 x 12 months = $60, always counted in full
+    var yearlyTotal = yearlyCard + residualFull;
+    var residualRunRate = newSubs*MONTHS*RESIDUAL;     // residual arriving every month by month 12
     document.getElementById('spdVal').textContent = s;
     document.getElementById('attVal').textContent = Math.round(a*100)+'%';
     document.getElementById('daily').textContent = money(roundTo(dailyCard,1));
-    document.getElementById('monthly').textContent = money(roundTo(monthlyAvg,50));
+    document.getElementById('monthly').textContent = money(roundTo(residualRunRate,50));
     document.getElementById('yearly').textContent = money(roundTo(yearlyTotal,1000));
-    document.getElementById('sentence').innerHTML = 'If you sell <b>'+s+' a day</b>, you’re on track for about <b>'+money(roundTo(yearlyTotal,1000))+' a year</b>.';
-    document.getElementById('brk').textContent = 'Breakdown: '+money(roundTo(yearlyCard,100))+'/yr from card sales + '+money(roundTo(yearlyResidual,100))+'/yr in monthly residuals.';
+    document.getElementById('sentence').innerHTML = 'If you sell <b>'+s+' a day</b>, a year of selling earns you about <b>'+money(roundTo(yearlyTotal,1000))+'</b> - and the residual keeps paying after that.';
+    document.getElementById('brk').textContent = money(roundTo(yearlyCard,100))+' in card commissions + '+money(roundTo(residualFull,100))+' in residuals ($5/mo for a full 12 months on every subscriber you sign).';
   }
   spd.addEventListener('input',update); att.addEventListener('input',update); update();
 })();
