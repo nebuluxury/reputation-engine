@@ -13,7 +13,7 @@
 <style>
   :root{--ink:#0a0f1c;--ink2:#1b2537;--muted:#657388;--line:#e6ebf1;--bg:#ffffff;--teal:#0d9488;--teal2:#0f766e;--gold:#f59e0b;--soft:#f0fdfa;--softline:#99f6e4;}
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html{scroll-behavior:smooth} section[id],#apply,#calc,#numbers{scroll-margin-top:64px}
+  html{scroll-behavior:smooth; overflow-x:hidden} body{overflow-x:hidden} section[id],#apply,#calc,#numbers{scroll-margin-top:64px}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
   h1,h2,h3{letter-spacing:-.02em;line-height:1.1;margin:0} p{margin:0} a{color:inherit}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
@@ -87,7 +87,7 @@
   .tier{border-radius:16px;padding:22px;text-align:left} .tier .lbl{font-size:12.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em} .tier p{margin:10px 0 0;color:#c7d3e2;font-size:15px}
   .tier.card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12)} .tier.card .lbl{color:#9fb0c3}
   .tier.auto{background:rgba(94,234,212,.08);border:1px solid rgba(94,234,212,.3)} .tier.auto .lbl{color:#5eead4} .tier b{color:#fff}
-  .phone{width:310px;margin:0 auto;background:#0f172a;border:11px solid #1e293b;border-radius:42px;box-shadow:0 30px 70px rgba(0,0,0,.5);overflow:hidden}
+  .phone{width:310px;max-width:100%;margin:0 auto;background:#0f172a;border:11px solid #1e293b;border-radius:42px;box-shadow:0 30px 70px rgba(0,0,0,.5);overflow:hidden}
   .phone .screen{background:#fff;color:var(--ink);border-radius:30px;overflow:hidden;min-height:540px;display:flex;flex-direction:column}
   .ph-top{background:linear-gradient(160deg,#0f766e,#0b5c55);color:#fff;padding:22px 20px 24px;text-align:center} .ph-top .biz{font-weight:900;font-size:20px} .ph-top .q{font-size:13.5px;opacity:.92;margin-top:3px}
   .ph-body{padding:26px 22px;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
